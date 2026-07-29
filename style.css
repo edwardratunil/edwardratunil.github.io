@@ -1300,6 +1300,7 @@ a:hover {
     justify-content: space-between;
     cursor: grab;
     user-select: none;
+    flex-shrink: 0 !important;
 }
 
 .ai-chat-header:active {
@@ -1364,9 +1365,11 @@ a:hover {
 
 .ai-chat-messages,
 [data-theme="light"] .ai-chat-messages {
-    flex-grow: 1;
+    flex-grow: 1 !important;
+    flex-shrink: 1 !important;
+    min-height: 0 !important;
     padding: 1.25rem;
-    overflow-y: auto;
+    overflow-y: auto !important;
     display: flex;
     flex-direction: column;
     gap: 1rem;
@@ -1406,6 +1409,7 @@ a:hover {
 
 .ai-suggestions,
 [data-theme="light"] .ai-suggestions {
+    flex-shrink: 0 !important;
     padding: 0.75rem 1rem;
     display: flex;
     flex-wrap: nowrap;
@@ -1452,6 +1456,7 @@ a:hover {
 
 .ai-input-area,
 [data-theme="light"] .ai-input-area {
+    flex-shrink: 0 !important;
     padding: 0.85rem 1rem;
     background: rgba(10, 10, 14, 0.98) !important;
     border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
