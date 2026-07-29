@@ -1,345 +1,604 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio - IT Student</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Bootstrap Icons -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
-    <!-- Custom CSS -->
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #FFFFFF;
-            color: #000000;
-            scroll-behavior: smooth;
-        }
-        header {
-            width: 100%;
-            background-color: #F8F9FA;
-            color: #000000;
-            padding: 1rem;
-            position: fixed;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-        .navbar-toggler {
-            border: none;
-        }
-        .navbar-toggler-icon {
-            border-radius: 2px;
-        }
-        .navbar-collapse {
-            justify-content: center;
-        }
-        .nav-link.active {
-            font-weight: bold;
-            color: #007bff; /* Add a distinctive color for the active link */
-            text-decoration: none;
-        }
+    <title>Edward S. Ratunil | IT Support & Full Stack Developer</title>
+    <meta name="description" content="Portfolio of Edward S. Ratunil - IT Support Specialist, Full Stack Web Developer, and IoT Hardware Integrator. Experienced in Fiber Optic FTTH, Laravel, Vue.js, React, and ESP32 Microcontrollers.">
+    <meta name="keywords" content="Edward Ratunil, IT Support, Full Stack Developer, Network Technician, FTTH Fiber Optic, CORNMIST, PingGamer, Laravel, Vue.js, ESP32 IoT">
+    
+    <!-- OpenGraph Meta -->
+    <meta property="og:title" content="Edward S. Ratunil | IT Support & Full Stack Developer">
+    <meta property="og:description" content="Explore Edward's portfolio, IoT Capstone, networking experience, and interactive AI assistant.">
+    <meta property="og:type" content="website">
 
-        main {
-            margin-top: 80px;
-            padding: 0;
-        }
-        section {
-            min-height: 100vh; /* Ensure sections occupy full screen height */
-            padding: 2rem;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-        }
-        .about-content {
-            display: flex;
-            align-items: center;
-            text-align: left;
-            gap: 2rem;
-        }
-        .profile-picture {
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-            background: url('p1.jpg') no-repeat center center/cover;
-            border: 1px solid #555555;
-        }
-        .about-text {
-            max-width: 600px;
-        }
-        .about-buttons {
-            margin-top: 1rem;
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-        .about-buttons a {
-            display: inline-flex;
-            justify-content: center;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.5rem 1rem;
-            border-radius: 5px;
-            background-color: #000000;
-            color: #FFFFFF;
-            font-size: 1rem;
-            text-decoration: none;
-            transition: background-color 0.3s;
-        }
-        .about-buttons a:hover {
-            background-color: #555555;
-        }
-        .projects {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem; /* Increased gap for better spacing */
-            max-width: 1200px;
-            width: 100%;
-        }
-
-        .project {
-            background: #F8F9FA;
-            padding: 1rem;
-            border: 1px solid #000000;
-            border-radius: 8px;
-            text-align: left;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        .project img {
-            width: 100%;
-            border-radius: 5px;
-            margin-bottom: 0.5rem;
-        }
-        .project a {
-            display: inline-block;
-            margin-top: 0.5rem;
-            color: #0000EE;
-            text-decoration: none;
-        }
-        .project a:hover {
-            text-decoration: none;
-        }
-        .project:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-        .contact p {
-            margin: 0.5rem 0;
-        }
-        .contact a {
-            color: #000000;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        .contact a:hover {
-            text-decoration: none;
-        }
-
-        h2 {
-            margin-bottom: 1.5rem;
-            font-size: 2rem;
-        }
-
-        p {
-            font-size: 1rem;
-            line-height: 1.6;
-            max-width: 800px;
-        }
-
-        .project h3 {
-            font-size: 1.2rem;
-            font-weight: bold;
-            margin-top: 0.5rem;
-            margin-bottom: 0.5rem;
-        }
-
-
-        @media (max-width: 768px) {
-            section {
-                padding: 8rem 1.5rem 1.5rem; /* Add extra padding to avoid overlap */
-                min-height: 100vh; /* Ensure full-height sections */
-                scroll-margin-top: 80px; /* Ensures smooth scrolling alignment */
-            }
-            .about-content {
-                flex-direction: column;
-                text-align: center;
-            }
-            .profile-picture {
-                margin-bottom: 1rem;
-            }
-            .projects {
-                grid-template-columns: 1fr;
-            }
-            h2 {
-                font-size: 1.8rem;
-            }
-            p {
-                font-size: 0.9rem;
-            }
-            .project h3 {
-                font-size: 1rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            section {
-                padding: 1rem;
-                min-height: 100vh; /* Maintain full-height sections on small screens */
-            }
-            h2 {
-                font-size: 1.5rem;
-            }
-            p {
-                font-size: 0.85rem;
-            }
-        }
-    </style>
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <nav class="navbar navbar-expand-lg">
-            <div class="container-fluid">
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
+
+    <!-- APPLE-STYLE NAVIGATION HEADER -->
+    <header class="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-brand">
+                <div class="nav-brand-logo">ER</div>
+                <span>Edward Ratunil</span>
+            </a>
+            
+            <ul class="nav-links">
+                <li><a href="#about" class="nav-link active">About</a></li>
+                <li><a href="#experience" class="nav-link">Experience</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#education" class="nav-link">Education</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <button class="theme-toggle-btn" id="themeToggleBtn" title="Toggle Light/Dark Mode" aria-label="Theme Toggle">
+                    <i class="bi bi-sun-fill"></i>
                 </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#about">About</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#experience">Experience</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#projects">Projects</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#contact">Contact</a>
-                        </li>
-                    </ul>
-                </div>
+
+                <button class="nav-btn nav-btn-glass js-download-cv" title="Download CV / Print Resume">
+                    <i class="bi bi-file-earmark-arrow-down"></i>
+                    <span>Resume</span>
+                </button>
+
+                <a href="#contact" class="nav-btn nav-btn-primary">
+                    <span>Hire Me</span>
+                    <i class="bi bi-arrow-right"></i>
+                </a>
+
+                <button class="mobile-toggle" id="mobileToggleBtn" aria-label="Toggle Mobile Menu">
+                    <i class="bi bi-list"></i>
+                </button>
             </div>
-        </nav>
+        </div>
     </header>
 
+    <!-- MOBILE NAVIGATION MENU -->
+    <div class="mobile-nav-menu" id="mobileNavMenu">
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
+        <a href="#" class="js-download-cv"><i class="bi bi-file-earmark-pdf"></i> Download Resume</a>
+    </div>
+
+    <!-- MAIN CONTENT -->
     <main>
-        <section id="about">
-            <div class="about-content">
-                <div class="profile-picture"></div>
-                <div class="about-text">
-                    <h5>Hello, I`m</h5>
-                    <h2>EDWARD RATUNIL</h2>
-                    <h4>IT Developer</h4>
-                    <div class="about-buttons">
-                        <a href="#" class="btn" title="Download CV"><i class="bi bi-file-earmark-person"></i> Download CV</a>
-                        <a href="#contact" class="btn" title="Contact Info"><i class="bi bi-envelope"></i></a>
-                        <a href="https://www.linkedin.com/in/yourprofile" class="btn" title="LinkedIn" target="_blank"><i class="bi bi-linkedin"></i></a>
-                        <a href="https://github.com/edwardratunil" class="btn" title="GitHub" target="_blank"><i class="bi bi-github"></i></a>
+
+        <!-- HERO SECTION -->
+        <section id="about" class="hero">
+            <div class="hero-glow"></div>
+            
+            <div class="status-badge">
+                <span class="pulse-dot"></span>
+                <span>Open for IT Support, Full Stack & IoT Roles</span>
+            </div>
+
+            <div class="hero-avatar-wrapper">
+                <img src="p1.jpg" alt="Edward S. Ratunil" class="hero-avatar" onerror="this.src='https://via.placeholder.com/150/1c1c1e/ffffff?text=ER'">
+            </div>
+
+            <div class="hero-title">
+                <h1 class="gradient-text" id="heroRoleTitle">
+                    Full Stack Developer & <span class="blue-gradient-text">IT Support Specialist</span>
+                </h1>
+            </div>
+
+            <p class="hero-subtitle">
+                Bridging network infrastructure, IoT hardware automation, and high-performance web applications with practical technical support expertise.
+            </p>
+
+            <div class="hero-cta">
+                <button class="btn-apple btn-apple-ai" onclick="window.EdwardAI.toggleWindow(true)">
+                    <i class="bi bi-stars"></i>
+                    <span>Chat with Edward AI</span>
+                </button>
+
+                <a href="#projects" class="btn-apple btn-apple-primary">
+                    <span>View Projects</span>
+                    <i class="bi bi-chevron-right"></i>
+                </a>
+
+                <a href="#" class="btn-apple btn-apple-secondary js-download-cv">
+                    <i class="bi bi-download"></i>
+                    <span>Download CV</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- DUAL-ROLE PERSPECTIVE SWITCHER -->
+        <div class="perspective-container">
+            <div class="perspective-label"><i class="bi bi-sliders"></i> Tailor View for Hiring Manager</div>
+            <div class="perspective-switcher">
+                <button class="perspective-btn active" data-perspective="all">All Capabilities</button>
+                <button class="perspective-btn" data-perspective="dev">Full Stack & IoT Developer</button>
+                <button class="perspective-btn" data-perspective="it">IT Support & Network Tech</button>
+            </div>
+        </div>
+
+        <!-- HIGHLIGHTS / BENTO BOX STATS GRID -->
+        <section class="section" style="padding-top: 0;">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon"><i class="bi bi-wifi"></i></div>
+                    <div class="stat-value">2+ Yrs</div>
+                    <div class="stat-label">FTTH Fiber Splicing & ISP Network Tech</div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon"><i class="bi bi-cpu"></i></div>
+                    <div class="stat-value">CORNMIST</div>
+                    <div class="stat-label">ESP32 Capstone IoT Agricultural Automation</div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon"><i class="bi bi-code-slash"></i></div>
+                    <div class="stat-value">PingGamer</div>
+                    <div class="stat-label">Full Stack Gaming VPN Platform</div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon"><i class="bi bi-mortarboard"></i></div>
+                    <div class="stat-value">June 2026</div>
+                    <div class="stat-label">BS IT Graduating (USTP CdO - IoT Major)</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- WORK EXPERIENCE SECTION -->
+        <section id="experience" class="section">
+            <div class="section-header">
+                <span class="section-tag">Career History</span>
+                <h2 class="section-title gradient-text">Professional Experience</h2>
+                <p class="section-subtitle">Real-world deployment of fiber networks, server setups, administrative workflows, and technical support.</p>
+            </div>
+
+            <div class="timeline">
+                
+                <!-- Experience Item 1 -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card">
+                        <div class="timeline-header">
+                            <div>
+                                <h3 class="timeline-role">Network Technician / IT Support</h3>
+                                <div class="timeline-company">Self-Employed / Local ISP Business</div>
+                            </div>
+                            <span class="timeline-date">2020 – 2022</span>
+                        </div>
+                        <ul class="timeline-list">
+                            <li>Installed Fiber-to-the-Home (FTTH) internet connections for residential and business clients.</li>
+                            <li>Configured fiber network equipment, routers, switches, and distribution boxes.</li>
+                            <li>Executed fiber optic fusion splicing, optical power testing, and physical cabling diagnosis.</li>
+                            <li>Configured and maintained Linux/Ubuntu internet servers and network bandwidth infrastructure.</li>
+                            <li>Provided on-site technical support, user device setup, and operational issue resolution.</li>
+                        </ul>
                     </div>
                 </div>
+
+                <!-- Experience Item 2 -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card">
+                        <div class="timeline-header">
+                            <div>
+                                <h3 class="timeline-role">Accounting Office & IT Support Assistant (GIP)</h3>
+                                <div class="timeline-company">Municipality of Lugait</div>
+                            </div>
+                            <span class="timeline-date">2013 (6 Months)</span>
+                        </div>
+                        <ul class="timeline-list">
+                            <li>Assisted accounting office in encoding check numbers, names, financial records using Microsoft Excel.</li>
+                            <li>Supported document processing, routing, and inter-departmental signing coordination.</li>
+                            <li>Maintained organized computer records and handled office printer/hardware support.</li>
+                        </ul>
+                    </div>
+                </div>
+
             </div>
         </section>
 
-        <section id="experience">
-            <h2>Experience</h2>
-            <p>Hi! I am an enthusiastic IT student diving deep into the world of software development, web technologies, and system design. I enjoy solving challenges and am eager to make a meaningful impact in the tech industry. My journey is fueled by curiosity and a drive for innovation.</p>
-            <p>My experience includes working on various academic and personal projects, exploring fields like front-end development, back-end development, and database management. I have also tried ioT experiments to hone my skills and collaborate with other tech enthusiasts.</p>
+        <!-- FEATURED PROJECTS SECTION -->
+        <section id="projects" class="section">
+            <div class="section-header">
+                <span class="section-tag">Portfolio Showcase</span>
+                <h2 class="section-title gradient-text">Featured Projects & Systems</h2>
+                <p class="section-subtitle">Full-stack web applications, IoT hardware integrations, and desktop networking software.</p>
+            </div>
+
+            <!-- Project Filters -->
+            <div class="projects-filter">
+                <button class="filter-btn active" data-filter="all">All Projects</button>
+                <button class="filter-btn" data-filter="capstone">Capstone IoT</button>
+                <button class="filter-btn" data-filter="web">Web Apps</button>
+                <button class="filter-btn" data-filter="desktop">Desktop / VPN</button>
+            </div>
+
+            <div class="projects-grid">
+
+                <!-- Project 1: CORNMIST Capstone -->
+                <div class="project-card" data-category="iot" data-tag="capstone">
+                    <div class="project-img-wrapper">
+                        <img src="esp32.png" alt="CORNMIST IoT Capstone" class="project-img">
+                        <span class="project-tag capstone">Capstone Project</span>
+                    </div>
+                    <div class="project-body">
+                        <h3 class="project-title">CORNMIST – IoT Misting & Pesticide System</h3>
+                        <p class="project-desc">IoT agricultural protection system utilizing ESP32 microcontrollers, automated spraying, and secure WiFi communication.</p>
+                        <ul class="project-bullets">
+                            <li>REST API communication over WiFi for IoT-to-server messaging.</li>
+                            <li>MAC address validation + API Key enrollment security workflow.</li>
+                            <li>Web monitoring app and mobile field operation app.</li>
+                        </ul>
+                        <div class="tech-stack">
+                            <span class="tech-pill">ESP32</span>
+                            <span class="tech-pill">REST API</span>
+                            <span class="tech-pill">Vue.js</span>
+                            <span class="tech-pill">PHP</span>
+                            <span class="tech-pill">IoT Security</span>
+                        </div>
+                        <div class="project-footer">
+                            <span class="project-link"><i class="bi bi-shield-check"></i> Verified Capstone</span>
+                            <button class="project-ai-btn js-trigger-ai-project" data-project="CORNMIST Capstone">
+                                <i class="bi bi-stars"></i> Ask AI
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2: PingGamer -->
+                <div class="project-card" data-category="desktop" data-tag="desktop" data-it-relevant="true">
+                    <div class="project-img-wrapper">
+                        <img src="laravel.png" alt="PingGamer Platform" class="project-img">
+                        <span class="project-tag">Live Platform</span>
+                    </div>
+                    <div class="project-body">
+                        <h3 class="project-title">PingGamer – Network Optimization Platform</h3>
+                        <p class="project-desc">Full stack web & desktop system designed to reduce gaming latency using secure tunneling and WireGuard VPN.</p>
+                        <ul class="project-bullets">
+                            <li>Electron desktop client integrated with WireGuard VPN.</li>
+                            <li>PHP & MySQL backend for authentication and server config.</li>
+                            <li>Vue.js user portal with automated latency routing.</li>
+                        </ul>
+                        <div class="tech-stack">
+                            <span class="tech-pill">Vue.js</span>
+                            <span class="tech-pill">Electron</span>
+                            <span class="tech-pill">WireGuard</span>
+                            <span class="tech-pill">PHP/MySQL</span>
+                        </div>
+                        <div class="project-footer">
+                            <a href="https://pinggamer.com" target="_blank" class="project-link">
+                                <span>pinggamer.com</span>
+                                <i class="bi bi-box-arrow-up-right"></i>
+                            </a>
+                            <button class="project-ai-btn js-trigger-ai-project" data-project="PingGamer">
+                                <i class="bi bi-stars"></i> Ask AI
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3: COPAD Government Inventory -->
+                <div class="project-card" data-category="web" data-tag="web">
+                    <div class="project-img-wrapper">
+                        <img src="laravel+reactjs.png" alt="COPAD Inventory Management System" class="project-img">
+                        <span class="project-tag">Government System</span>
+                    </div>
+                    <div class="project-body">
+                        <h3 class="project-title">Government Inventory Management (COPAD)</h3>
+                        <p class="project-desc">Web-based record and inventory management system designed for municipal government document tracking.</p>
+                        <ul class="project-bullets">
+                            <li>Structured relational database design with CRUD features.</li>
+                            <li>Data tracking, reporting, and administrative controls.</li>
+                            <li>Improved document processing speed for municipal departments.</li>
+                        </ul>
+                        <div class="tech-stack">
+                            <span class="tech-pill">Full Stack</span>
+                            <span class="tech-pill">PHP</span>
+                            <span class="tech-pill">MySQL</span>
+                            <span class="tech-pill">HTML/CSS</span>
+                        </div>
+                        <div class="project-footer">
+                            <span class="project-link"><i class="bi bi-building"></i> Municipal Project</span>
+                            <button class="project-ai-btn js-trigger-ai-project" data-project="COPAD Inventory">
+                                <i class="bi bi-stars"></i> Ask AI
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4: Python Payroll System -->
+                <div class="project-card" data-category="desktop" data-tag="desktop">
+                    <div class="project-img-wrapper">
+                        <img src="python.png" alt="Python Payroll System" class="project-img">
+                        <span class="project-tag">Desktop Tool</span>
+                    </div>
+                    <div class="project-body">
+                        <h3 class="project-title">Python Payroll Management System</h3>
+                        <p class="project-desc">Desktop app built in Python for automated employee salary processing and record keeping.</p>
+                        <div class="tech-stack">
+                            <span class="tech-pill">Python</span>
+                            <span class="tech-pill">GUI</span>
+                            <span class="tech-pill">Database</span>
+                        </div>
+                        <div class="project-footer">
+                            <a href="https://github.com/edwardratunil/Payroll_System" target="_blank" class="project-link">
+                                <span>GitHub Repository</span>
+                                <i class="bi bi-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 5: Laravel + React Social Media -->
+                <div class="project-card" data-category="web" data-tag="web">
+                    <div class="project-img-wrapper">
+                        <img src="laravel+reactjs.png" alt="Laravel + ReactJS Social Media" class="project-img">
+                        <span class="project-tag">Web App</span>
+                    </div>
+                    <div class="project-body">
+                        <h3 class="project-title">Laravel + ReactJS Social Media Platform</h3>
+                        <p class="project-desc">Full-stack web application featuring user posts, interactive comments, and real-time feeds.</p>
+                        <div class="tech-stack">
+                            <span class="tech-pill">Laravel</span>
+                            <span class="tech-pill">React.js</span>
+                            <span class="tech-pill">REST API</span>
+                        </div>
+                        <div class="project-footer">
+                            <a href="https://github.com/ibanezellafaye/SocMed-PIT" target="_blank" class="project-link">
+                                <span>GitHub Repository</span>
+                                <i class="bi bi-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 6: ESP32 GPS Vehicle Tracker -->
+                <div class="project-card" data-category="iot" data-tag="capstone">
+                    <div class="project-img-wrapper">
+                        <img src="esp32.png" alt="Python ESP32 Vehicle Tracker" class="project-img">
+                        <span class="project-tag">IoT Hardware</span>
+                    </div>
+                    <div class="project-body">
+                        <h3 class="project-title">Python ESP32 Trackable Vehicle & GPS</h3>
+                        <p class="project-desc">Real-time GPS tracking and vehicle location mapping powered by ESP32 microcontrollers and Python backend.</p>
+                        <div class="tech-stack">
+                            <span class="tech-pill">ESP32</span>
+                            <span class="tech-pill">Python</span>
+                            <span class="tech-pill">GPS Neo6M</span>
+                        </div>
+                        <div class="project-footer">
+                            <a href="https://github.com/edwardratunil/ESP32_Neo6mWeb" target="_blank" class="project-link">
+                                <span>GitHub Repository</span>
+                                <i class="bi bi-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
         </section>
 
-        <section id="projects">
-            <h2>Projects</h2>
-            <div class="projects">
-                <div class="project">
-                    <img src="python.png" alt="Python Payroll System">
-                    <h3>Python Payroll System</h3>
-                    <p>A desktop application built in Python for managing employee payroll efficiently.</p>
-                    <a href="https://github.com/edwardratunil/Payroll_System" target="_blank">View Project</a>
+        <!-- SKILLS & INFRASTRUCTURE MATRIX -->
+        <section id="skills" class="section">
+            <div class="section-header">
+                <span class="section-tag">Technical Competencies</span>
+                <h2 class="section-title gradient-text">Skills & Infrastructure Matrix</h2>
+                <p class="section-subtitle">A balanced breakdown across IT hardware support, network engineering, and modern software development.</p>
+            </div>
+
+            <div class="skills-grid">
+                
+                <!-- Category 1: IT Support -->
+                <div class="skill-category-card" data-category="it">
+                    <div class="skill-category-header">
+                        <div class="skill-category-icon"><i class="bi bi-tools"></i></div>
+                        <h3 class="skill-category-title">IT Support & Troubleshooting</h3>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-chip">Hardware Troubleshooting</span>
+                        <span class="skill-chip">Software Installation</span>
+                        <span class="skill-chip">OS Setup (Windows/Linux)</span>
+                        <span class="skill-chip">Printer & Peripheral Setup</span>
+                        <span class="skill-chip">End-User Tech Support</span>
+                        <span class="skill-chip">Technical Diagnosis</span>
+                    </div>
                 </div>
-                <div class="project">
-                    <img src="laravel+reactjs.png" alt="Laravel + ReactJS Social Media">
-                    <h3>Laravel + ReactJS Social Media</h3>
-                    <p>A full-stack social media platform with features like user posts, comments, and real-time notifications.</p>
-                    <a href="https://github.com/ibanezellafaye/SocMed-PIT" target="_blank">View Project</a>
+
+                <!-- Category 2: Networking & Infrastructure -->
+                <div class="skill-category-card" data-category="networking">
+                    <div class="skill-category-header">
+                        <div class="skill-category-icon"><i class="bi bi-ethernet"></i></div>
+                        <h3 class="skill-category-title">Networking & Infrastructure</h3>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-chip">FTTH Deployment</span>
+                        <span class="skill-chip">Fiber Optic Fusion Splicing</span>
+                        <span class="skill-chip">LAN/WAN Configuration</span>
+                        <span class="skill-chip">Router & Switch Setup</span>
+                        <span class="skill-chip">Network Troubleshooting</span>
+                        <span class="skill-chip">Wireless AP Setup</span>
+                    </div>
                 </div>
-                <div class="project">
-                    <img src="laravel.png" alt="Laravel Multi Authentication">
-                    <h3>Laravel Multi Authentication</h3>
-                    <p>A secure application supporting multiple authentication roles for admins, users, and managers.</p>
-                    <a href="https://github.com/edwardratunil/Activity3Laravel" target="_blank">View Project</a>
+
+                <!-- Category 3: Full Stack Web Development -->
+                <div class="skill-category-card" data-category="dev">
+                    <div class="skill-category-header">
+                        <div class="skill-category-icon"><i class="bi bi-code-square"></i></div>
+                        <h3 class="skill-category-title">Full Stack Web Development</h3>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-chip">JavaScript (ES6+)</span>
+                        <span class="skill-chip">PHP & Laravel</span>
+                        <span class="skill-chip">Vue.js</span>
+                        <span class="skill-chip">React.js</span>
+                        <span class="skill-chip">RESTful APIs</span>
+                        <span class="skill-chip">MySQL & Database Design</span>
+                        <span class="skill-chip">Electron Desktop</span>
+                    </div>
                 </div>
-                <div class="project">
-                    <img src="java.png" alt="Java Classroom Management">
-                    <h3>Java Classroom Management System</h3>
-                    <p>A tool for teachers to manage classroom tasks, schedules, and grades efficiently.</p>
-                    <a href="https://github.com/edwardratunil/RoomManagementSystem" target="_blank">View Project</a>
+
+                <!-- Category 4: IoT & Embedded Systems -->
+                <div class="skill-category-card" data-category="iot">
+                    <div class="skill-category-header">
+                        <div class="skill-category-icon"><i class="bi bi-cpu-fill"></i></div>
+                        <h3 class="skill-category-title">IoT & Embedded Systems</h3>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-chip">ESP32 Microcontrollers</span>
+                        <span class="skill-chip">REST API over WiFi</span>
+                        <span class="skill-chip">Hardware MAC Auth</span>
+                        <span class="skill-chip">Neo6M GPS Telemetry</span>
+                        <span class="skill-chip">Sensor Automation</span>
+                    </div>
                 </div>
-                <div class="project">
-                    <img src="esp32.png" alt="Python ESP32 Wifi+GPS">
-                    <h3>Python ESP32 Wifi+GPS</h3>
-                    <p>An IoT project using ESP32 and Python for real-time GPS tracking over WiFi.</p>
-                    <a href="https://github.com/edwardratunil/ESP32_Neo6mWeb" target="_blank">View Project</a>
+
+                <!-- Category 5: Systems & Tools -->
+                <div class="skill-category-card" data-category="systems">
+                    <div class="skill-category-header">
+                        <div class="skill-category-icon"><i class="bi bi-terminal"></i></div>
+                        <h3 class="skill-category-title">Systems & Administration</h3>
+                    </div>
+                    <div class="skill-tags">
+                        <span class="skill-chip">Ubuntu Server</span>
+                        <span class="skill-chip">Windows Administration</span>
+                        <span class="skill-chip">Microsoft 365</span>
+                        <span class="skill-chip">Git & GitHub</span>
+                        <span class="skill-chip">VS Code</span>
+                        <span class="skill-chip">Network Monitoring</span>
+                    </div>
                 </div>
-                <div class="project">
-                    <img src="esp32.png" alt="Python ESP32 Trackable Vehicle">
-                    <h3>Python ESP32 Trackable Vehicle</h3>
-                    <p>A GPS-enabled vehicle tracking system powered by Python and ESP32.</p>
-                    <a href="https://github.com/edwardratunil/ESP32_Neo6mWeb" target="_blank">View Project</a>
+
+            </div>
+        </section>
+
+        <!-- EDUCATION & CREDENTIALS -->
+        <section id="education" class="section">
+            <div class="section-header">
+                <span class="section-tag">Academic Background</span>
+                <h2 class="section-title gradient-text">Education & Certifications</h2>
+            </div>
+
+            <div class="education-grid">
+                
+                <!-- Degree 1 -->
+                <div class="edu-card">
+                    <span class="edu-badge edu-badge-degree">Bachelor Degree</span>
+                    <h3 class="edu-title">BS in Information Technology (Major in IoT)</h3>
+                    <div class="edu-institution">University of Science and Technology of Southern Philippines (USTP)</div>
+                    <div class="edu-year"><i class="bi bi-calendar-event"></i> Expected Graduation: June 2026 | Cagayan de Oro City</div>
+                    <p>Focused on Internet of Things (IoT), full stack application development, and hardware-software system security.</p>
                 </div>
-                <div class="project">
-                    <img src="react.png" alt="ReactJS Track Web Management">
-                    <h3>ReactJS Track Web Management</h3>
-                    <p>A web-based management tool built with ReactJS for efficient tracking and resource allocation.</p>
-                    <a href="https://github.com/edwardratunil/ReactjsWebBased" target="_blank">View Project</a>
+
+                <!-- Degree 2 -->
+                <div class="edu-card">
+                    <span class="edu-badge edu-badge-degree">Diploma</span>
+                    <h3 class="edu-title">Diploma in Electronics Tech (Major in Computer Tech)</h3>
+                    <div class="edu-institution">Mindanao State University – Naawan</div>
+                    <div class="edu-year"><i class="bi bi-calendar-event"></i> 2015 – 2017 | Naawan, Misamis Oriental</div>
+                    <p>Foundation in electronic circuit design, computer hardware diagnostics, and micro-controller assembly.</p>
+                </div>
+
+                <!-- Certification 3 -->
+                <div class="edu-card">
+                    <span class="edu-badge edu-badge-tesda">TESDA Certification</span>
+                    <h3 class="edu-title">Computer Hardware Servicing NC II</h3>
+                    <div class="edu-institution">Technical Education and Skills Development Authority (TESDA)</div>
+                    <div class="edu-year"><i class="bi bi-calendar-event"></i> 2012 – 2013 | Ditucalan, Iligan City</div>
+                    <p>National Certification for hardware servicing, operating system setup, computer assembly, and network cabling.</p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- CONTACT SECTION -->
+        <section id="contact" class="section">
+            <div class="contact-card">
+                <span class="section-tag">Let's Connect</span>
+                <h2 class="gradient-text" style="font-size: 2.5rem; margin-bottom: 1rem;">Ready for Hiring & Technical Collaborations</h2>
+                <p style="max-width: 600px; margin: 0 auto;">Whether you are looking for an IT Support Specialist, FTTH Network Tech, or a Full Stack & IoT Developer, feel free to reach out directly.</p>
+
+                <div class="contact-links">
+                    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=ratunil.edward@gmail.com&su=Job%20Opportunity%20-%20Edward%20Ratunil" target="_blank" class="btn-apple btn-apple-primary">
+                        <i class="bi bi-envelope-fill"></i>
+                        <span>ratunil.edward@gmail.com</span>
+                    </a>
+
+                    <a href="tel:09976112845" class="btn-apple btn-apple-secondary">
+                        <i class="bi bi-telephone-fill"></i>
+                        <span>09976112845</span>
+                    </a>
+
+                    <a href="https://github.com/edwardratunil" target="_blank" class="btn-apple btn-apple-secondary">
+                        <i class="bi bi-github"></i>
+                        <span>GitHub Profile</span>
+                    </a>
                 </div>
             </div>
         </section>
 
-        <section id="contact">
-            <h2>Contact</h2>
-            <p>Have questions or collaboration ideas? Reach out to me!</p>
-            <p>Email: <a href="https://mail.google.com/mail/?view=cm&fs=1&to=ratunil.edward@gmail.com&su=Hello%20Edward&body=I%20would%20like%20to%20discuss%20a%20project." target="_blank">ratunil.edward@gmail.com</a></p>
-            <p>GitHub: <a href="https://github.com/edwardratunil" target="_blank">github.com/edwardratunil</a></p>
-        </section>
     </main>
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const navLinks = document.querySelectorAll('header nav a');
-            const sections = document.querySelectorAll('section');
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <p>© 2026 Edward S. Ratunil. Built with Apple-inspired design system & AI Chat Assistant integration.</p>
+        </div>
+    </footer>
 
-            function setActiveLink() {
-                let activeIndex = -1;
+    <!-- AI ASSISTANT CHAT WIDGET ("Edward AI") -->
+    <button class="ai-widget-trigger" id="aiWidgetTrigger" aria-label="Open AI Assistant Chat">
+        <div class="ai-trigger-sparkle"><i class="bi bi-stars"></i></div>
+        <span>Ask Edward AI</span>
+    </button>
 
-                sections.forEach((section, index) => {
-                    const sectionTop = section.offsetTop - 80; // Adjust for fixed header height
-                    const sectionBottom = sectionTop + section.offsetHeight;
+    <div class="ai-chat-window" id="aiChatWindow">
+        <div class="ai-chat-header">
+            <div class="ai-chat-title-group">
+                <div class="ai-avatar"><i class="bi bi-robot"></i></div>
+                <div>
+                    <div class="ai-chat-name">Edward AI <i class="bi bi-patch-check-fill" style="color: var(--accent-blue); font-size: 0.85rem;"></i></div>
+                    <div class="ai-chat-status"><span class="pulse-dot" style="width: 6px; height: 6px;"></span> Active • Resume Assistant</div>
+                </div>
+            </div>
+            <button class="ai-close-btn" id="aiCloseBtn" aria-label="Close Chat Window">
+                <i class="bi bi-x-lg"></i>
+            </button>
+        </div>
 
-                    if (window.scrollY >= sectionTop && window.scrollY < sectionBottom) {
-                        activeIndex = index;
-                    }
-                });
+        <div class="ai-chat-messages" id="aiChatMessages">
+            <!-- Messages populated dynamically -->
+        </div>
 
-                navLinks.forEach((link, index) => {
-                    if (index === activeIndex) {
-                        link.classList.add('active');
-                    } else {
-                        link.classList.remove('active');
-                    }
-                });
-            }
+        <div class="ai-suggestions">
+            <button class="ai-chip" data-prompt="Tell me about his CORNMIST Capstone project">🌾 CORNMIST Capstone</button>
+            <button class="ai-chip" data-prompt="What is PingGamer?">⚡ PingGamer Project</button>
+            <button class="ai-chip" data-prompt="What is Edward's FTTH & Fiber experience?">📡 Fiber & ISP Exp</button>
+            <button class="ai-chip" data-prompt="What full stack skills does he have?">💻 Full Stack Skills</button>
+            <button class="ai-chip" data-prompt="How can I contact Edward for a job?">📬 Contact Info</button>
+        </div>
 
-            setActiveLink(); // Run on initial load
-            window.addEventListener('scroll', setActiveLink); // Update on scroll
-        });
+        <div class="ai-input-area">
+            <input type="text" class="ai-input" id="aiInput" placeholder="Ask anything about Edward..." autocomplete="off">
+            <button class="ai-send-btn" id="aiSendBtn" aria-label="Send Message">
+                <i class="bi bi-send-fill"></i>
+            </button>
+        </div>
+    </div>
 
-    </script>
+    <!-- JavaScript Files -->
+    <script src="ai-assistant.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
