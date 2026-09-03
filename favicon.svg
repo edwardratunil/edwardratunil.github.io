@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 108 90" width="64" height="64">
+    <!-- Cloud Ambient Shadow / Depth -->
+    <path d="M 30,76 C 14,76 4,64 5,49 C 6,34 18,22 32,23 C 36,9 50,2 65,7 C 78,11 86,22 88,34 C 98,37 104,48 102,60 C 100,72 89,78 77,78 C 67,86 52,87 40,82 C 34,84 31,80 30,76 Z" 
+          fill="#0284c7"/>
+    <!-- Main Puffy Cloud Body -->
+    <path d="M 30,74 C 14,74 4,62 5,47 C 6,32 18,20 32,21 C 36,7 50,0 65,5 C 78,9 86,20 88,32 C 98,35 104,46 102,58 C 100,70 89,76 77,76 C 67,84 52,85 40,80 C 34,82 31,78 30,74 Z" 
+          fill="#38bdf8"/>
+    <!-- Top Highlight -->
+    <path d="M 32,24 C 36,10 49,4 63,8 C 74,12 82,21 84,32 C 72,25 56,22 42,23 C 37,23 34,24 32,24 Z" 
+          fill="#bae6fd" opacity="0.8"/>
+    <!-- Cute Symmetrical Left Eye -->
+    <ellipse cx="41" cy="46" rx="4.5" ry="5.5" fill="#ffffff"/>
+    <ellipse cx="42" cy="45" rx="2" ry="2.5" fill="#0f172a"/>
+    <circle cx="43" cy="44" r="0.8" fill="#ffffff"/>
+    <!-- Cute Symmetrical Right Eye -->
+    <ellipse cx="67" cy="46" rx="4.5" ry="5.5" fill="#ffffff"/>
+    <ellipse cx="68" cy="45" rx="2" ry="2.5" fill="#0f172a"/>
+    <circle cx="69" cy="44" r="0.8" fill="#ffffff"/>
+</svg>
